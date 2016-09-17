@@ -1,0 +1,140 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Atenea</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/forml.css" />
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"/>
+    <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.leanModal.min.js"></script>
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+	</head>
+	<body>
+	        <!--header-->
+	        <header id="header">
+			<img src="images/logo.png" width="230px">
+			<p>Una herramienta de estudiantes para estudiantes <br />
+			de la <a href="https://www.uac.edu.co">Universidad Autonoma Del caribe</a>.</p>
+			<a id="modal_trigger" href="#modal" class="button special small">Entrar</a></header>
+               <!--login-->
+               <div id="modal" class="popupContainer" style="display:none;">
+                <header class="popupHeader">
+                <span class="header_title">Iniciar sesion</span>
+                <span class="modal_close"><i class="fa fa-times"></i></span>
+                </header>
+                <!--Pop Up modal-->
+                <section class="popupBody">
+                <!-- Abrir con Login -->
+                <div class="social_login">
+                        <div class="">
+                            <a href="#" class="social_box fb">
+                                <span class="icon"><i class="fa fa-facebook"></i></span>
+                                <span class="icon_title">Entrar con Facebook</span>
+
+                            </a>
+
+                            <a href="#" class="social_box google">
+                                <span class="icon"><i class="fa fa-google-plus"></i></span>
+                                <span class="icon_title">Entrar con Google</span>
+                            </a>
+                        </div>
+                        <div class="centeredText">
+                            <span>O ingresa con tu usuario</span>
+                        </div>
+                        <div class="action_btns">
+                            <div class="one_half"><a href="#" id="login_form" class="button special small">Entrar</a></div>
+                            <div class="one_half last"><a href="#" id="register_form" class="button special small">Registrarse</a></div>
+                        </div>
+                    </div>
+                <!-- Usuario & Contraseña Login -->
+                <div class="user_login">
+                        <form>
+                            <label>Usuario</label>
+                            <input type="text" />
+                            <br />
+
+                            <label>Contraseña</label>
+                            <input type="password" />
+                            <br />
+
+                            <div class="checkbox">
+                                <input id="remember" type="checkbox" />
+                                <label for="remember">Recordar</label>
+                            </div>
+
+                            <div class="action_btns">
+                                <div class="one_half"><a href="#" class="button special small back_btn"><i class="fa fa-angle-double-left"></i> Atras</a></div>
+                                <div class="one_half last"><a href="#" class="button special small btn_red">Entrar</a></div>
+                            </div>
+                        </form>
+
+                        <a href="#" class="forgot_password">Olvidaste tu contraseña?</a>
+                    </div>
+                <!-- Formulario de Registro -->
+                <div class="user_register">
+                        <form>
+                             <label>Usuario</label>
+                             <input type="text" />
+                             <br />
+                             <label>Email</label>
+                             <input type="email" />
+                             <br />
+                             <label>Contraseña</label>
+                             <input type="password" />
+                             <br />
+                             <div class="checkbox">
+                                 <input id="send_updates" type="checkbox" />
+                                 <label for="send_updates">Deseo recibir notificaciones a mi correo</label>
+                             </div>
+                                <div class="action_btns">
+                                    <div class="one_half"><a href="#" class="button special small back_btn"><i class="fa fa-angle-double-left"></i> Atras</a></div>
+                                    <div class="one_half last"><a href="#" class="button special small btn_red">Registrarse</a></div>
+                                </div>
+                       </form>
+                </div>
+              </section>
+				</div>
+		      <!--footer-->
+			    <footer id="footer">
+				 <ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li></ul>
+				<ul class="copyright">
+						<li>Javier Santander &copy; 2016</li>
+						<li><a href="https://www.uac.edu.co"><img src="images/logou.png" width="100px"></a></li>
+				</ul>
+			</footer>
+      		<!--scripts-->
+		    <script src="assets/js/mainindex.js"></script>
+             <script type="text/javascript">
+                    $("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+                    $(function(){
+                        // Llama al formulario de entrar
+                        $("#login_form").click(function(){
+                            $(".social_login").hide();
+                            $(".user_login").show();
+                            return false;
+                        });
+                        // Llama al registro de usuarios
+                        $("#register_form").click(function(){
+                            $(".social_login").hide();
+                            $(".user_register").show();
+                            $(".header_title").text('Registro');
+                            return false;
+                        });
+                        // Ir al inicio del formulario
+                        $(".back_btn").click(function(){
+                            $(".user_login").hide();
+                            $(".user_register").hide();
+                            $(".social_login").show();
+                            $(".header_title").text('Iniciar sesion');
+                            return false;
+                    });
+                })
+           </script>
+	</body>
+</html>
